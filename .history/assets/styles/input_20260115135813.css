@@ -1,0 +1,33 @@
+/* Importa Tailwind */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* Importa a fonte do Google */
+@import url("https://fonts.googleapis.com/css2?family=Phetsarath:wght@400;700&display=swap");
+
+/* Variáveis globais de cores */
+:root {
+  --color-background: #FCFCFC;
+  --color-primary: #354D7B;
+  --color-error: #FF4337;
+  --color-success: #3CCA0A;
+  --color-alternative: #1E9C65;
+  --color-warning: #FFD337;
+  --color-placeholder: #D9D9D9;
+  --color-placeholder-bold: #605F5F;
+}
+
+/* Fonte personalizada para usar com Tailwind */
+@layer utilities {
+  .font-display {
+    font-family: "Phetsarath", sans-serif;
+  }
+}
+
+/* Opcional: aplicar a fonte em todo o site */
+@layer base {
+  body {
+    font-family: "Phetsarath", sans-serif;
+    background-color: var(--color-background);
+  }
+}

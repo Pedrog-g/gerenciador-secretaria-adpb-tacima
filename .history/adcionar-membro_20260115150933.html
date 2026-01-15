@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gerenciador de Secretaria - ADPB TACIMA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Phetsarath:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles/output.css">
+  <!-- Production version -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body class="w-screen min-h-full bg-background font-display">
+  <header class="h-25 px-5 py-6 flex  justify-between items-center relative">
+    <img src="assets/images/logo-ad-tacima.png" alt="Logo ADPB Tacima">
+    <nav class="lg:flex hidden items-center ">
+      <ul class="flex gap-8 font-bold uppercase text-lg text-primary">
+        <li>
+          <a href="index.html">Início</a>
+        </li>
+        <li>
+          <a href="adicionar-membro.html">Adicionar novo Membro</a>
+        </li>
+        <li>
+          <a href="arquivos.html">Arquivos</a>
+        </li>
+        <li>
+          <a href="geradores.html">Geradores</a>
+        </li>
+      </ul>
+    </nav>
+    <button id="mobile-menu-button" class="flex lg:hidden flex-col gap-1">
+      <span class="h-0.75 w-5 bg-primary"></span>
+      <span class="h-0.75 w-5 bg-primary"></span>
+      <span class="h-0.75 w-5 bg-primary"></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <!-- Mobile menu -->
+    <ul id="mobile-menu"
+      class="hidden lg:hidden flex-col gap-8 font-bold uppercase text-lg text-white w-full absolute top-full left-0 bg-primary">
+      <li class="p-3 transition-all duration-150 hover:brightness-80">
+        <a href="index.html">Início</a>
+      </li>
+      <li class="p-3 transition-all duration-150 hover:brightness-80">
+        <a href="adicionar-membro.html">Adicionar novo Membro</a>
+      </li>
+      <li class="p-3 transition-all duration-150 hover:brightness-80">
+        <a href="arquivos.html">Arquivos</a>
+      </li>
+      <li class="p-3 transition-all duration-150 hover:brightness-80">
+        <a href="geradores.html">Geradores</a>
+      </li>
+    </ul>
+  </header>
+  <main class="flex justify-center mt-16 p-5 pb-10">
+    <div class="w-[85%] max-w-125">
+      <h1 class="uppercase text-primary font-bold text-lg  lg:text-2xl text-center lg:mb-20 mb-10">Adcionar membro
+      </h1>
+      <div class="flex gap-20 flex-wrap">
+        <form id="new_member_form"></form>
+      </div>
+    </div>
+  </main>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    lucide.createIcons();
+  </script>
+  <script src="assets/scripts/custom.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gerenciador de Secretaria - ADPB TACIMA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Phetsarath:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles/output.css">
+  <!-- Production version -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<!-- <style>
+  * {
+    outline: 1px solid red;
+  }
+</style> -->
+
+<body class="w-full min-h-full bg-background font-display">
+  <header class="h-25 px-5 py-6 flex  justify-between items-center relative">
+    <img src="assets/images/logo-ad-tacima.png" alt="Logo ADPB Tacima">
+    <nav class="lg:flex hidden items-center ">
+      <ul class="flex gap-8 font-bold uppercase text-lg text-primary">
+        <li>
+          <a href="index.html">Início</a>
+        </li>
+        <li>
+          <a href="adicionar-membro.html">Adicionar novo Membro</a>
+        </li>
+        <li>
+          <a href="arquivos.html">Arquivos</a>
+        </li>
+        <li>
+          <a href="geradores.html">Geradores</a>
+        </li>
+      </ul>
+    </nav>
+    <button id="mobile-menu-button" class="flex lg:hidden flex-col gap-1">
+      <span class="h-0.75 w-5 bg-primary"></span>
+      <span class="h-0.75 w-5 bg-primary"></span>
+      <span class="h-0.75 w-5 bg-primary"></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <!-- Mobile menu -->
+    <ul id="mobile-menu"
+      class="hidden lg:hidden flex-col gap-8 font-bold uppercase text-lg text-white w-full absolute top-full left-0 bg-primary">
+      <li class="p-3 transition-all duration-150 hover:brightness-80">
+        <a href="index.html">Início</a>
+      </li>
+      <li class="p-3 transition-all duration-150 hover:brightness-80">
+        <a href="adicionar-membro.html">Adicionar novo Membro</a>
+      </li>
+      <li class="p-3 transition-all duration-150 hover:brightness-80">
+        <a href="arquivos.html">Arquivos</a>
+      </li>
+      <li class="p-3 transition-all duration-150 hover:brightness-80">
+        <a href="geradores.html">Geradores</a>
+      </li>
+    </ul>
+  </header>
+  <main class="flex justify-center mt-16  pb-10">
+    <div class="w-[85%] max-w-125">
+      <h1 class="uppercase text-primary font-bold text-lg  lg:text-2xl text-center lg:mb-20 mb-10">Adcionar membro
+      </h1>
+      <div class="flex gap-20 flex-wrap w-full">
+        <form id="new_member_form" class="w-full space-y-6">
+
+          <!-- Sessão 1: Dados Pessoais -->
+          <h2 class="text-primary font-bold text-base border-b border-primary pb-1">Dados Pessoais</h2>
+
+          <!-- Nome -->
+          <div class="flex flex-col">
+            <label for="nome" class="text-primary text-sm font-bold pb-1">Nome completo:</label>
+            <input type="text" name="nome" id="nome" placeholder="Seu nome aqui"
+              class="h-10 border border-primary rounded-sm w-full p-2 placeholder:text-placeholder text-base">
+          </div>
+
+          <!-- Data Nascimento + Estado Civil -->
+          <div class="flex gap-4">
+            <div class="flex flex-col w-1/2">
+              <label for="data_nascimento" class="text-primary text-sm font-bold pb-1">Data de Nascimento:</label>
+              <input type="text" name="data_nascimento" id="data_nascimento" placeholder="DD/MM/AAAA"
+                class="h-10 border border-primary rounded-sm w-full p-2 placeholder:text-placeholder text-base">
+            </div>
+
+            <div class="flex flex-col w-1/2">
+              <label for="estado_civil" class="text-primary text-sm font-bold pb-1">Estado Civil:</label>
+              <select name="estado_civil" id="estado_civil"
+                class="h-10 border border-primary rounded-sm w-full p-2 text-base text-gray-700">
+                <option value="">Selecione uma opção</option>
+                <option value="solteiro">Solteiro(a)</option>
+                <option value="casado">Casado(a)</option>
+                <option value="divorciado">Divorciado(a)</option>
+                <option value="viuvo">Viúvo(a)</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- RG + CPF -->
+          <div class="flex gap-4">
+            <div class="flex flex-col w-1/2">
+              <label for="rg" class="text-primary text-sm font-bold pb-1">RG:</label>
+              <input type="text" name="rg" id="rg" placeholder="Som. Números"
+                class="h-10 border border-primary rounded-sm w-full p-2 placeholder:text-placeholder text-base">
+            </div>
+
+            <div class="flex flex-col w-1/2">
+              <label for="cpf" class="text-primary text-sm font-bold pb-1">CPF:</label>
+              <input type="text" name="cpf" id="cpf" placeholder="XXX.XXX.XXX-XX"
+                class="h-10 border border-primary rounded-sm w-full p-2 placeholder:text-placeholder text-base">
+            </div>
+          </div>
+
+          <!-- Filiação -->
+          <div class="flex flex-col">
+            <label for="nome_mae" class="text-primary text-sm font-bold pb-1">Filiação:</label>
+            <input type="text" name="nome_mae" id="nome_mae" placeholder="Nome da Mãe"
+              class="h-10 border border-primary rounded-sm w-full p-2 placeholder:text-placeholder text-base mb-2">
+
+            <input type="text" name="nome_pai" id="nome_pai" placeholder="Nome do Pai"
+              class="h-10 border border-primary rounded-sm w-full p-2 placeholder:text-placeholder text-base">
+          </div>
+
+          <!-- Nacionalidade + Naturalidade -->
+          <div class="flex gap-4">
+            <div class="flex flex-col w-1/2">
+              <label for="nacionalidade" class="text-primary text-sm font-bold pb-1">Nacionalidade:</label>
+              <input type="text" name="nacionalidade" id="nacionalidade" placeholder="Brasileira"
+                class="h-10 border border-primary rounded-sm w-full p-2 placeholder:text-placeholder text-base">
+            </div>
+
+            <div class="flex flex-col w-1/2">
+              <label for="naturalidade" class="text-primary text-sm font-bold pb-1">Naturalidade:</label>
+              <input type="text" name="naturalidade" id="naturalidade" placeholder="Naturalidade"
+                class="h-10 border border-primary rounded-sm w-full p-2 placeholder:text-placeholder text-base">
+            </div>
+          </div>
+
+          <!-- Sessão 2: Dados Eclesiásticos -->
+          <h2 class="text-primary font-bold text-base border-b border-primary pb-1 pt-4">Dados Eclesiásticos</h2>
+
+          <!-- Conversão + Batismo -->
+          <div class="flex gap-4">
+            <div class="flex flex-col w-1/2">
+              <label for="data_conversao" class="text-primary text-sm font-bold pb-1">Data de Conversão:</label>
+              <input type="text" name="data_conversao" id="data_conversao" placeholder="DD/MM/AAAA"
+                class="h-10 border border-primary rounded-sm w-full p-2 placeholder:text-placeholder text-base">
+              <label class="flex items-center gap-2 mt-1 text-sm text-gray-700">
+                <input type="checkbox" name="conversao_nao_recordo" class="accent-primary">
+                Não recordo
+              </label>
+            </div>
+
+            <div class="flex flex-col w-1/2">
+              <label for="data_batismo" class="text-primary text-sm font-bold pb-1">Data de Batismo:</label>
+              <input type="text" name="data_batismo" id="data_batismo" placeholder="DD/MM/AAAA"
+                class="h-10 border border-primary rounded-sm w-full p-2 placeholder:text-placeholder text-base">
+              <label class="flex items-center gap-2 mt-1 text-sm text-gray-700">
+                <input type="checkbox" name="batismo_nao_recordo" class="accent-primary">
+                Não recordo
+              </label>
+            </div>
+          </div>
+
+          <!-- Cargo -->
+          <div class="flex flex-col">
+            <label for="cargo" class="text-primary text-sm font-bold pb-1">Cargo que exerce na igreja:</label>
+            <input type="text" name="cargo" id="cargo" placeholder="Cargo"
+              class="h-10 border border-primary rounded-sm w-full p-2 placeholder:text-placeholder text-base">
+          </div>
+
+          <!-- Botão -->
+          <div class="pt-4">
+            <button type="submit"
+              class="w-full h-11 bg-primary text-white font-bold rounded-sm hover:opacity-90 transition">
+              Continuar
+            </button>
+          </div>
+
+          <!-- ETAPA 2 - FOTO -->
+          <section id="step-photo" class="w-full space-y-6 hidden">
+
+            <h2 class="uppercase text-primary font-bold text-lg text-center">Adicionar novo membro</h2>
+
+            <div class="flex items-center gap-2">
+              <span class="text-primary font-bold">Foto</span>
+              <div class="flex-1 h-px bg-primary"></div>
+            </div>
+
+            <!-- Upload box -->
+            <div class="flex flex-col items-center justify-center gap-4">
+
+              <label for="foto"
+                class="w-48 h-56 bg-gray-200 flex flex-col items-center justify-center cursor-pointer hover:brightness-95 transition">
+                <i data-lucide="camera" class="w-12 h-12 text-gray-500 mb-2"></i>
+                <span class="font-bold text-gray-600 uppercase text-sm text-center">Carregar<br>Foto</span>
+                <input type="file" id="foto" name="foto" accept="image/*" class="hidden">
+              </label>
+
+              <!-- Botões -->
+              <div class="flex gap-4">
+                <button type="button" id="removePhotoBtn"
+                  class="bg-red-500 text-white px-4 py-2 rounded-sm text-sm font-bold hover:opacity-90 transition">
+                  Remover foto
+                </button>
+
+                <button type="button" id="cropPhotoBtn"
+                  class="bg-yellow-400 text-white px-4 py-2 rounded-sm text-sm font-bold hover:opacity-90 transition">
+                  Cortar e usar
+                </button>
+              </div>
+
+              <!-- Checkbox -->
+              <label class="flex items-center gap-2 text-sm text-gray-700 mt-2">
+                <input type="checkbox" id="noPhoto" class="accent-primary">
+                Não quero foto.
+              </label>
+
+              <!-- Texto explicativo -->
+              <p class="text-center text-sm text-primary font-bold px-6 leading-snug">
+                Essa foto será utilizada nos documentos oficiais.<br>
+                Caso não selecione, esta opção não estará disponível até carregar uma foto.
+              </p>
+
+              <!-- Botão finalizar -->
+              <button type="submit"
+                class="w-full max-w-xs bg-green-500 text-white font-bold py-3 rounded-sm hover:opacity-90 transition mt-4">
+                Finalizar cadastro
+              </button>
+
+            </div>
+
+          </section>
+
+        </form>
+
+      </div>
+    </div>
+  </main>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    lucide.createIcons();
+  </script>
+  <script src="assets/scripts/custom.js"></script>
+</body>
+
+</html>
